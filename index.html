@@ -1,93 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delta Aerospace</title>
-  <style>
-    body { margin:0; font-family:Arial, sans-serif; background:#0a0a0a; color:white; }
-    header { display:flex; justify-content:space-between; align-items:center; padding:20px; background:#111; }
-    nav a { margin-left:20px; color:white; text-decoration:none; font-size:14px; }
-    .hero { padding:80px 20px; max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; gap:40px; }
-    .hero-text { flex:1; min-width:280px; }
-    .hero-visual { flex:1; min-width:280px; background:#1a1a1a; padding:20px; border-radius:12px; }
-    h1, h2, h3, h4 { margin:0 0 15px 0; }
-    section { padding:60px 20px; max-width:1200px; margin:auto; }
-    .card-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
-    .card { background:#1a1a1a; padding:20px; border-radius:12px; }
-    footer { text-align:center; padding:30px; background:#111; margin-top:40px; }
-    .btn { padding:10px 20px; border-radius:6px; text-decoration:none; font-weight:bold; }
-    .btn-primary { background:#4f46e5; color:black; }
-    .btn-outline { border:1px solid #444; color:white; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delta Aerospace Systems</title>
+<style>
+/* Reset & Base */
+* { box-sizing: border-box; margin:0; padding:0; font-family: 'Segoe UI', Arial, sans-serif; }
+body { background: #0a0a0a; color: #f5f5f5; line-height: 1.6; }
+a { color: #1e90ff; text-decoration: none; }
+a:hover { color: #00ffff; }
+
+/* Container */
+.container { width: 90%; max-width: 1200px; margin: auto; padding: 2rem 0; }
+
+/* Header / Hero */
+header { 
+    text-align: center; 
+    padding: 4rem 0; 
+    background: linear-gradient(135deg, #001f3f, #0047AB); 
+    color: #cce0ff; 
+}
+header img { max-width: 120px; margin-bottom: 1rem; border-radius: 50%; border: 2px solid #00aaff; }
+header h1 { font-size: 3rem; margin-bottom: 1rem; color: #00ffff; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
+header p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #d0e8ff; }
+
+/* Sections */
+section { padding: 4rem 0; }
+h2 { font-size: 2rem; margin-bottom: 1rem; color: #00aaff; border-bottom: 3px solid #00ffff; display: inline-block; padding-bottom: 0.25rem; }
+p { margin-bottom: 1rem; }
+
+/* Projects Grid */
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.project-card { 
+    background: linear-gradient(145deg, #111, #1a1a1a); 
+    padding: 1.5rem; 
+    border-radius: 1rem; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    border-left: 5px solid #00aaff; 
+}
+.project-card:hover { 
+    transform: translateY(-7px); 
+    box-shadow: 0 10px 25px rgba(0,170,255,0.4); 
+}
+.project-card h3 { margin-bottom: 0.5rem; color: #00ffff; }
+.project-card p { font-size: 0.95rem; color: #ccc; }
+
+/* Safety List */
+.safety-list { list-style: disc; padding-left: 1.5rem; }
+.safety-list li a { color: #00aaff; transition: color 0.2s; }
+.safety-list li a:hover { color: #00ffff; }
+
+/* Footer */
+footer { 
+    text-align: center; 
+    padding: 2rem 0; 
+    background: linear-gradient(135deg, #0047AB, #001f3f); 
+    color: #888; 
+    font-size: 0.9rem; 
+    border-top: 2px solid #00aaff; 
+}
+footer a { color: #1e90ff; }
+footer a:hover { color: #00ffff; }
+
+/* Responsive tweaks */
+@media(max-width: 600px){
+    header h1 { font-size: 2.2rem; }
+    section { padding: 3rem 0; }
+}
+</style>
 </head>
 <body>
 
+<!-- Hero / Header -->
 <header>
-  <div style="display:flex; align-items:center; gap:10px;">
-    <div style="width:40px; height:40px; background:linear-gradient(135deg,#00e5ff,#5865f2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:black;">Δ</div>
-    <div>
-      <h2 style="margin:0; font-size:18px;">Delta Aerospace</h2>
-      <p style="margin:0; font-size:12px; opacity:0.7;">Propulsion & avionics engineering</p>
-    </div>
-  </div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#services">Services</a>
-    <a href="#team">Team</a>
-    <a href="#contact" class="btn btn-primary">Contact</a>
-  </nav>
+    <img src="images/logo.jpg" alt="Delta Aerospace Logo">
+    <h1>Delta Aerospace Systems</h1>
+    <p>Pushing the boundaries of small launch vehicles and advanced aerospace systems with open innovation and rigorous engineering.</p>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1 style="font-size:36px; font-weight:800;">Launch‑ready avionics & propulsion designed for makers who test.</h1>
-    <p style="max-width:500px; opacity:0.8;">We design flight computers, rocket hardware and testing systems for hobbyists, students, and startups. Real data, real engineering, no corporate vibes.</p>
-    <div style="margin-top:20px; display:flex; gap:10px;">
-      <a href="#products" class="btn btn-primary">Browse Kits</a>
-      <a href="#contact" class="btn btn-outline">Request Quote</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <h3>Delta Flight Computer v1</h3>
-    <p style="opacity:0.8; font-size:14px;">BMI270 + BME280 + ATSAMD21E18A — SWD & USB onboard.</p>
-  </div>
-</section>
+<div class="container">
 
-<section id="about">
-  <h2>Who We Are</h2>
-  <p style="max-width:700px; opacity:0.8;">Delta Aerospace builds practical, test‑driven rocketry hardware. From avionics to static test rigs, we blend hobbyist energy with real aerospace methodology.</p>
-</section>
+    <!-- About -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Delta Aerospace Systems is focused on cutting-edge aerospace development — from flight computers to deployment systems and 3D-printed hardware. Our work is open-source and community-driven.</p>
+    </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card-grid">
-    <div class="card">
-      <h3><a href="https://github.com/Delta-Aerospace/Hank-Dual-Deployment" style="color:#7ab6ff; text-decoration:none;">Hank Dual Deployment Flight Computer</a></h3>
-      <p>ESP32-C3 based dual-deployment flight computer featuring:</p>
-      <ul>
-        <li>u-blox MAX-M10S GPS</li>
-        <li>MS5611 barometric altimeter</li>
-        <li>Dual-servo deployment channels</li>
-        <li>UART telemetry compatibility</li>
-        <li>MIT licensed hardware + firmware</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <!-- Projects / Tech -->
+    <section id="projects">
+        <h2>Projects & Technology</h2>
+        <div class="projects">
 
-<section id="services">
-  <h2>Services</h2>
-  <div class="card-grid">
-    <div class="card"><h3>Avionics Design</h3><p>Custom flight computers and firmware.</p></div>
-    <div class="card"><h3>Test Stand Engineering</h3><p>Load cells, DAQ, and static fire setups.</p></div>
-    <div class="card"><h3>Workshops & Consulting</h3><p>Launch planning, safety, and training.</p></div>
-  </div>
-</section>
+            <div class="project-card">
+                <h3><a href="https://github.com/Delta-Aerospace/Hank-Dual-Deployment" target="_blank">Hank-Dual-Deployment</a></h3>
+                <p>Flight computer designed for servo rocket deployment, telemetry, and GPS tracking — built around ESP32-C3 and sensors.</p>
+            </div>
 
+            <div class="project-card">
+                <h3><a href="https://github.com/augiefromspace/Moses-Hank-Framework" target="_blank">Moses-Hank Framework</a></h3>
+                <p>Flight computer framework for rapid development of rocket avionics and mission control systems.</p>
+            </div>
 
+            <div class="project-card">
+                <h3>Parachute 3D Models</h3>
+                <p>CAD and 3D design files for rocket parachutes and recovery hardware — optimized for reliability and ease of use.</p>
+            </div>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: admin@deltaaero.space
+        </div>
+    </section>
+
+    <!-- Safety Protocols -->
+    <section id="safety">
+        <h2>Safety Protocols</h2>
+        <p>Safety is central to all our operations. Below are links to our published safety protocols:</p>
+        <ul class="safety-list">
+            <li><a href="https://drive.google.com/file/d/1ErN2e3rExlG-MZaJMb_mFVXZACA_2-M_/view?usp=sharing" target="_blank">Safety Protocol 1</a></li>
+            <li><a href="#">Safety Protocol 2 (Link TBD)</a></li>
+            <li><a href="#">Safety Protocol 3 (Link TBD)</a></li>
+        </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:info@deltaaero.space">info@deltaaero.space</a></p>
+        <p>GitHub: <a href="https://github.com/augiefromspace" target="_blank">github.com/augiefromspace</a></p>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    &copy; Delta Aerospace Systems · ABN 84 627 038 121 · Open development on <a href="https://github.com/augiefromspace" target="_blank">GitHub</a>
+</footer>
+
+</body>
+</html>
